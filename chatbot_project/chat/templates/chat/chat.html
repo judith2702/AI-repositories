@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with GPT</title>
+</head>
+<body>
+    <h1>Ask Anything</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="user_input" rows="5" cols="60" placeholder="Ask me anything...">{{ user_input }}</textarea><br>
+        <input type="submit" value="Send">
+    </form>
+
+    {% if response_text %}
+        <h2>Response:</h2>
+        <p>{{ response_text }}</p>
+    {% endif %}
+</body>
+</html>
